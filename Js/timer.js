@@ -1,0 +1,18 @@
+function showTime() {
+    const date = new Date();
+    return date.getHours() + "Hrs:" + date.getMinutes() + "Mins:" + date.getSeconds() + "Secs";
+}
+
+function showSessionExpire() {
+    console.log("Activity-B: Your session expired at "+showTime());
+}
+
+function showSessionInBetween() {
+    console.log("Activity-B: Your session is in between at "+showTime());
+}
+
+console.log("Activity-A: Trigerring Activity-B at "+showTime());
+setTimeout(showSessionInBetween, 5000);
+setTimeout(showSessionExpire, 10000);
+console.log("Activity-A: Trigerred Activity-B at " +showTime()+ " will execute after 10 seconds");
+
